@@ -1,0 +1,96 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import { Product } from './types';
+
+export const PRODUCTS: Product[] = [
+  {
+    id: '1',
+    name: 'Minimalist Wool Coat',
+    price: 299,
+    category: 'women',
+    subcategory: 'Outerwear',
+    image: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?q=80&w=800&auto=format&fit=crop',
+    description: 'A timeless minimalist wool coat designed for elegance and warmth. Features a clean silhouette and premium wool blend.',
+    sizes: ['XS', 'S', 'M', 'L'],
+    trending: true,
+    newArrival: true,
+  },
+  {
+    id: '2',
+    name: 'Structured Cotton Blazer',
+    price: 189,
+    category: 'men',
+    subcategory: 'Suits',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop',
+    description: 'Perfectly tailored blazer in breathable cotton. Ideal for both formal and smart-casual occasions.',
+    sizes: ['48', '50', '52', '54'],
+    trending: true,
+  },
+  {
+    id: '3',
+    name: 'Silk Slip Dress',
+    price: 145,
+    category: 'women',
+    subcategory: 'Dresses',
+    image: 'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?q=80&w=800&auto=format&fit=crop',
+    description: 'Effortless silk slip dress with delicate straps. A versatile piece for evening wear or layered looks.',
+    sizes: ['XS', 'S', 'M'],
+    newArrival: true,
+  },
+  {
+    id: '4',
+    name: 'Premium Cashmere Sweater',
+    price: 220,
+    category: 'men',
+    subcategory: 'Knitwear',
+    image: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop',
+    description: 'Ultra-soft cashmere sweater crafted from the finest yarns. Exceptional comfort and lasting quality.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    trending: true,
+  },
+  {
+    id: '5',
+    name: 'High-Waist Tailored Trousers',
+    price: 120,
+    category: 'women',
+    subcategory: 'Trousers',
+    image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=800&auto=format&fit=crop',
+    description: 'Elegant high-waist trousers with a sharp crease. Designed to elongate the silhouette.',
+    sizes: ['34', '36', '38', '40'],
+  },
+  {
+    id: '6',
+    name: 'Leather Chelsea Boots',
+    price: 210,
+    category: 'men',
+    subcategory: 'Shoes',
+    image: 'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?q=80&w=800&auto=format&fit=crop',
+    description: 'Classic Chelsea boots in premium Italian leather. Features a durable sole and elastic side panels.',
+    sizes: ['40', '41', '42', '43', '44'],
+    newArrival: true,
+  },
+  {
+    id: '7',
+    name: 'Linen Blend Shirt',
+    price: 85,
+    category: 'men',
+    subcategory: 'Shirts',
+    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=800&auto=format&fit=crop',
+    description: 'Lightweight linen blend shirt for a relaxed yet polished look. Perfect for warm weather.',
+    sizes: ['S', 'M', 'L', 'XL'],
+  },
+  {
+    id: '8',
+    name: 'Oversized Poplin Shirt',
+    price: 75,
+    category: 'women',
+    subcategory: 'Shirts',
+    image: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?q=80&w=800&auto=format&fit=crop',
+    description: 'Modern oversized shirt in crisp cotton poplin. A wardrobe essential for effortless styling.',
+    sizes: ['XS', 'S', 'M', 'L'],
+    trending: true,
+  }
+];

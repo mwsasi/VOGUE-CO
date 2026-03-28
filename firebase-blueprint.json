@@ -1,0 +1,87 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Unique user ID from Firebase Auth" },
+        "email": { "type": "string", "format": "email", "description": "User's email address" },
+        "displayName": { "type": "string", "description": "User's display name" },
+        "photoURL": { "type": "string", "description": "User's profile photo URL" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Account creation timestamp" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "A fashion apparel product",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique product ID" },
+        "name": { "type": "string", "description": "Product name" },
+        "price": { "type": "number", "description": "Product price" },
+        "category": { "type": "string", "enum": ["men", "women"], "description": "Product category" },
+        "subcategory": { "type": "string", "description": "Product subcategory (e.g., Coats, Blazers)" },
+        "image": { "type": "string", "description": "Product image URL" },
+        "description": { "type": "string", "description": "Product description" },
+        "sizes": { "type": "array", "items": { "type": "string" }, "description": "Available sizes" },
+        "trending": { "type": "boolean", "description": "Whether the product is trending" },
+        "newArrival": { "type": "boolean", "description": "Whether the product is a new arrival" }
+      },
+      "required": ["id", "name", "price", "category", "image"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "A customer order",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique order ID" },
+        "userId": { "type": "string", "description": "ID of the user who placed the order" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "productId": { "type": "string" },
+              "name": { "type": "string" },
+              "price": { "type": "number" },
+              "quantity": { "type": "integer" },
+              "selectedSize": { "type": "string" },
+              "image": { "type": "string" }
+            }
+          }
+        },
+        "total": { "type": "number", "description": "Total order amount" },
+        "status": { "type": "string", "enum": ["pending", "processing", "shipped", "delivered"], "description": "Order status" },
+        "shippingDetails": {
+          "type": "object",
+          "properties": {
+            "firstName": { "type": "string" },
+            "lastName": { "type": "string" },
+            "address": { "type": "string" },
+            "city": { "type": "string" },
+            "zipCode": { "type": "string" },
+            "phone": { "type": "string" }
+          }
+        },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Order placement timestamp" }
+      },
+      "required": ["id", "userId", "items", "total", "status", "shippingDetails", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile documents"
+    },
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Product catalog"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Customer orders"
+    }
+  }
+}
